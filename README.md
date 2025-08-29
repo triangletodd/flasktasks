@@ -160,20 +160,68 @@ The app runs in debug mode by default, enabling:
 - Detailed error messages
 - Flask development server
 
+### Running Tests
+FlaskTasks includes comprehensive automated tests to ensure functionality and prevent regressions.
+
+#### Test Dependencies
+Install test dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+#### Running Tests
+You can run tests using multiple approaches:
+
+**Using the test runner script:**
+```bash
+# Run all tests
+python run_tests.py all
+
+# Run unittest suite only
+python run_tests.py unittest
+
+# Run pytest suite only
+python run_tests.py pytest
+
+# Run with coverage reporting
+python run_tests.py coverage
+```
+
+**Using unittest directly:**
+```bash
+# Run all unittest tests
+python -m unittest discover -v
+
+# Run specific test files
+python -m unittest test_app.py -v
+python -m unittest test_templates.py -v
+```
+
+**Using pytest directly:**
+```bash
+# Run all pytest tests
+pytest -v
+
+# Run specific test file
+pytest test_pytest.py -v
+
+# Run with coverage
+pytest --cov=app --cov-report=html
+```
+
+#### Test Structure
+- `test_simple.py` - Core application functionality tests using unittest
+- `test_app.py` - Extended application tests with database functions
+- `test_templates.py` - HTML template and UI tests using unittest + BeautifulSoup
+- `test_pytest.py` - Modern pytest-based tests with fixtures
+- `conftest.py` - Pytest fixtures and configuration
+- `pytest.ini` - Pytest configuration settings
+
 ### Database Management
 - Database file: `todos.db` (SQLite)
 - Automatic schema creation/migration
 - Foreign key constraints enabled
 - Cascade deletion for nested tasks
-
-## Security Notes
-
-For production deployment:
-- Change the Flask secret key in `app.py`
-- Use environment variables for configuration
-- Consider adding HTTPS
-- Implement rate limiting
-- Add input validation and sanitization
 
 ## Contributing
 
@@ -186,14 +234,6 @@ For production deployment:
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## Support
-
-If you encounter any issues or have questions:
-1. Check the browser console for JavaScript errors
-2. Verify Python dependencies are installed correctly
-3. Ensure you're using a supported browser version
-4. Create an issue with detailed reproduction steps
 
 ---
 
