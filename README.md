@@ -172,6 +172,23 @@ pip install -r requirements.txt
 #### Running Tests
 You can run tests using multiple approaches:
 
+**Using Make (Recommended):**
+```bash
+# Run all tests (fastest)
+make test
+
+# Run individual test suites
+make test-simple      # Core functionality tests
+make test-app         # Extended application tests  
+make test-templates   # HTML template and UI tests
+make test-pytest      # Modern pytest-based tests
+
+# Development workflow
+make test-coverage    # Tests with coverage reporting
+make quick-test       # Quick core functionality test
+make check           # Run tests + linting
+```
+
 **Using the test runner script:**
 ```bash
 # Run all tests
