@@ -1,8 +1,6 @@
 # FlaskTasks
 
-A responsive, feature-rich task management application built with Flask and SQLite, featuring nested subtasks and a clean, modern interface.
-
-![FlaskTasks Screenshot](https://via.placeholder.com/800x400/007bff/ffffff?text=FlaskTasks)
+A task management application built with Flask and SQLite.
 
 ## Features
 
