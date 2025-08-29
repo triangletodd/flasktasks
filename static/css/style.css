@@ -1,0 +1,248 @@
+/* Custom styles for the todo list app */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Todo-specific styles */
+.todo-header h1 {
+    color: #495057;
+    font-weight: 600;
+}
+
+.todo-item {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    background: white;
+    position: relative;
+}
+
+.todo-item:hover {
+    border-color: #0d6efd;
+    box-shadow: 0 2px 8px rgba(13, 110, 253, 0.1);
+}
+
+.todo-item.completed {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+.todo-item.completed:hover {
+    border-color: #adb5bd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Nested todo styles */
+.todo-item.nested-todo {
+    margin-left: 2rem;
+    border-left: 3px solid #6c757d;
+    background: #fafbfc;
+}
+
+.todo-item.nested-todo:hover {
+    border-left-color: #0d6efd;
+}
+
+.todo-item.nested-todo.completed {
+    background-color: #f1f3f4;
+    border-left-color: #adb5bd;
+}
+
+.todo-item.parent-todo {
+    border-left: 3px solid transparent;
+}
+
+.todo-item.parent-todo.completed {
+    border-left-color: #28a745;
+}
+
+.nested-indicator {
+    position: absolute;
+    left: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.todo-text-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Collapse/Expand functionality */
+.collapse-toggle {
+    color: #6c757d !important;
+    text-decoration: none !important;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    min-width: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.collapse-toggle:hover {
+    color: #0d6efd !important;
+    background: none !important;
+}
+
+.collapse-icon {
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.todo-item.nested-todo {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.todo-item.nested-todo.collapsed {
+    max-height: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+    opacity: 0;
+}
+
+.todo-item.nested-todo.collapsed .card-body {
+    padding: 0;
+}
+
+.todo-content {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.todo-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.edit-form {
+    width: 100%;
+}
+
+.edit-form input {
+    font-size: 1rem;
+}
+
+.form-check-input:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.todo-stats {
+    padding: 0.5rem 1rem;
+    background: #e9ecef;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+/* Input group styling */
+.input-group .form-control {
+    border-radius: 6px 0 0 6px;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+}
+
+.input-group .btn {
+    border-radius: 0 6px 6px 0;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Alert styling */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+/* Empty state */
+.text-center i.display-1 {
+    font-size: 4rem;
+    opacity: 0.3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .todo-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .todo-item .card-body {
+        padding: 1rem;
+    }
+    
+    .d-flex.align-items-center {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.75rem;
+    }
+    
+    .todo-content {
+        width: 100%;
+        min-height: auto;
+    }
+    
+    .form-check {
+        margin-bottom: 0;
+    }
+    
+    /* Nested todos on mobile */
+    .todo-item.nested-todo {
+        margin-left: 1rem;
+    }
+    
+    .nested-indicator {
+        left: -1.5rem;
+    }
+    
+    .todo-item.nested-todo .card-body {
+        padding-left: 0.75rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group .form-control,
+    .input-group .btn {
+        border-radius: 6px;
+        width: 100%;
+    }
+    
+    .input-group .btn {
+        margin-top: 0.5rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

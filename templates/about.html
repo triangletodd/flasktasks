@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+{% block title %}About - Personal Todo List{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1>About This Todo App</h1>
+        <p class="lead">A personal todo list application built with Python Flask and SQLite.</p>
+        
+        <h3>Features</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Add, edit, and delete todos</li>
+            <li class="list-group-item"><i class="bi bi-toggle-on text-primary"></i> Toggle completion status</li>
+            <li class="list-group-item"><i class="bi bi-phone text-info"></i> Responsive design for all devices</li>
+            <li class="list-group-item"><i class="bi bi-database text-warning"></i> SQLite database for data persistence</li>
+            <li class="list-group-item"><i class="bi bi-keyboard text-secondary"></i> Keyboard shortcuts (Escape to cancel, Ctrl/Cmd+Enter to add)</li>
+            <li class="list-group-item"><i class="bi bi-pencil-square text-info"></i> Inline editing with click to edit</li>
+        </ul>
+        
+        <h3 class="mt-4">Technology Stack</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Backend</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-dot"></i> Python Flask</li>
+                            <li><i class="bi bi-dot"></i> SQLite3 Database</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Frontend</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-dot"></i> Bootstrap 5</li>
+                            <li><i class="bi bi-dot"></i> Bootstrap Icons</li>
+                            <li><i class="bi bi-dot"></i> Responsive CSS</li>
+                            <li><i class="bi bi-dot"></i> Vanilla JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-4">
+            <a href="/" class="btn btn-primary">
+                <i class="bi bi-arrow-left"></i> Back to Todos
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
