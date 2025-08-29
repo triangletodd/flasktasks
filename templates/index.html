@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Personal Todo List{% endblock %}</title>
+    <title>{% block title %}FlaskTasks{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -11,14 +11,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="/"><i class="bi bi-check-square me-2"></i>My Todo List</a>
+            <a class="navbar-brand" href="/"><i class="bi bi-check-square me-2"></i>FlaskTasks</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Todos</a>
+                        <a class="nav-link" href="/">Tasks</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about">About</a>
@@ -44,13 +44,13 @@
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="todo-header mb-4">
-                    <h1 class="text-center mb-4"><i class="bi bi-list-check"></i> My Personal Todo List</h1>
+                    <h1 class="text-center mb-4"><i class="bi bi-list-check"></i> FlaskTasks</h1>
                     
                     <form action="{{ url_for('add_todo') }}" method="post" class="mb-4">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="task" placeholder="Add a new todo..." required>
+                            <input type="text" class="form-control" name="task" placeholder="Add a new task..." required>
                             <button class="btn btn-primary" type="submit">
-                                <i class="bi bi-plus-lg"></i> Add Todo
+                                <i class="bi bi-plus-lg"></i> Add Task
                             </button>
                         </div>
                     </form>
@@ -174,8 +174,8 @@
                     {% else %}
                         <div class="text-center py-5">
                             <i class="bi bi-clipboard-x display-1 text-muted"></i>
-                            <h3 class="text-muted mt-3">No todos yet!</h3>
-                            <p class="text-muted">Add your first todo above to get started.</p>
+                            <h3 class="text-muted mt-3">No tasks yet!</h3>
+                            <p class="text-muted">Add your first task above to get started.</p>
                         </div>
                     {% endif %}
                 </div>
@@ -186,7 +186,7 @@
 
     <footer class="bg-dark text-light py-4 mt-5">
         <div class="container text-center">
-            <p>&copy; 2024 Personal Todo List. Built with Flask, SQLite, and Bootstrap.</p>
+            <p>&copy; 2024 FlaskTasks. Built with Flask, SQLite, and Bootstrap.</p>
         </div>
     </footer>
 

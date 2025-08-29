@@ -69,7 +69,7 @@ def add_todo():
             else:
                 conn.execute('INSERT INTO todos (task) VALUES (?)', (task,))
             conn.commit()
-        flash('Todo added successfully!', 'success')
+        flash('Task added successfully!', 'success')
     else:
         flash('Please enter a task!', 'error')
     return redirect(url_for('index'))
@@ -90,7 +90,7 @@ def delete_todo(todo_id):
         # Delete the todo and its children (CASCADE will handle children)
         conn.execute('DELETE FROM todos WHERE id = ?', (todo_id,))
         conn.commit()
-    flash('Todo deleted!', 'info')
+    flash('Task deleted!', 'info')
     return redirect(url_for('index'))
 
 @app.route('/toggle_with_children/<int:todo_id>')
@@ -118,7 +118,7 @@ def edit_todo(todo_id):
                 (new_task, todo_id)
             )
             conn.commit()
-        flash('Todo updated!', 'success')
+        flash('Task updated!', 'success')
     return redirect(url_for('index'))
 
 @app.route('/about')

@@ -1,15 +1,15 @@
-# Personal Todo List App
+# FlaskTasks
 
-A responsive, feature-rich todo list application built with Flask and SQLite, featuring nested subtasks and a clean, modern interface.
+A responsive, feature-rich task management application built with Flask and SQLite, featuring nested subtasks and a clean, modern interface.
 
-![Todo App Screenshot](https://via.placeholder.com/800x400/007bff/ffffff?text=Todo+List+App)
+![FlaskTasks Screenshot](https://via.placeholder.com/800x400/007bff/ffffff?text=FlaskTasks)
 
 ## Features
 
 ### ✨ Core Functionality
-- **Add, Edit, Delete Todos** - Full CRUD operations with inline editing
+- **Add, Edit, Delete Tasks** - Full CRUD operations with inline editing
 - **Mark Complete/Incomplete** - Toggle completion status with visual feedback
-- **Nested Subtasks** - Organize todos with unlimited subtask nesting
+- **Nested Subtasks** - Organize tasks with unlimited subtask nesting
 - **Collapsible Interface** - Fold/expand subtasks to reduce visual clutter
 - **Persistent Storage** - SQLite database ensures your data is always saved
 
@@ -38,7 +38,7 @@ A responsive, feature-rich todo list application built with Flask and SQLite, fe
 1. **Clone or download the project**
    ```bash
    git clone <repository-url>
-   cd todo
+   cd flasktasks
    ```
 
 2. **Install dependencies**
@@ -59,26 +59,26 @@ The database will be created automatically on first run.
 ## Usage Guide
 
 ### Basic Operations
-- **Add Todo**: Type in the input field and press Enter or click "Add Todo"
-- **Complete Todo**: Click the checkbox next to any task
-- **Edit Todo**: Click the pencil icon and modify the text inline
-- **Delete Todo**: Click the trash icon (confirms before deletion)
+- **Add Task**: Type in the input field and press Enter or click "Add Task"
+- **Complete Task**: Click the checkbox next to any task
+- **Edit Task**: Click the pencil icon and modify the text inline
+- **Delete Task**: Click the trash icon (confirms before deletion)
 
 ### Working with Subtasks
-- **Create Subtask**: Click the `+` button on any parent todo
+- **Create Subtask**: Click the `+` button on any parent task
 - **Expand/Collapse**: Click the chevron arrow (►/▼) to show/hide subtasks
 - **Bulk Operations**: Use the "check all" button to toggle parent and all subtasks
 - **Visual Indicators**: Subtasks are indented and show their parent relationship
 
 ### Keyboard Shortcuts
-- `Ctrl/Cmd + Enter`: Quickly add new todo
+- `Ctrl/Cmd + Enter`: Quickly add new task
 - `Escape`: Cancel editing or subtask creation
 - `Enter`: Confirm inline edits
 
 ## Project Structure
 
 ```
-todo/
+flasktasks/
 ├── app.py                 # Main Flask application
 ├── requirements.txt       # Python dependencies
 ├── todos.db              # SQLite database (created on first run)
@@ -88,7 +88,7 @@ todo/
 │   └── js/
 │       └── app.js        # Client-side functionality
 └── templates/
-    ├── index.html        # Main todo interface
+    ├── index.html        # Main task interface
     └── about.html        # About page
 ```
 
@@ -99,7 +99,7 @@ CREATE TABLE todos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     task TEXT NOT NULL,
     completed BOOLEAN DEFAULT FALSE,
-    parent_id INTEGER,                    -- Links to parent todo for nesting
+    parent_id INTEGER,                    -- Links to parent task for nesting
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (parent_id) REFERENCES todos (id) ON DELETE CASCADE
@@ -110,12 +110,12 @@ CREATE TABLE todos (
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/` | Display main todo interface |
-| POST | `/add` | Add new todo (with optional parent_id) |
+| GET | `/` | Display main task interface |
+| POST | `/add` | Add new task (with optional parent_id) |
 | GET | `/toggle/<id>` | Toggle completion status |
 | GET | `/toggle_with_children/<id>` | Toggle parent and all subtasks |
-| POST | `/edit/<id>` | Update todo text |
-| GET | `/delete/<id>` | Delete todo and all subtasks |
+| POST | `/edit/<id>` | Update task text |
+| GET | `/delete/<id>` | Delete task and all subtasks |
 | GET | `/about` | Display about page |
 
 ## Customization
@@ -130,7 +130,7 @@ Modify `static/css/style.css` to customize:
 ### Functionality  
 Extend `app.py` to add:
 - User authentication
-- Todo categories/tags
+- Task categories/tags
 - Due dates and reminders
 - Import/export functionality
 - REST API for mobile apps
@@ -164,7 +164,7 @@ The app runs in debug mode by default, enabling:
 - Database file: `todos.db` (SQLite)
 - Automatic schema creation/migration
 - Foreign key constraints enabled
-- Cascade deletion for nested todos
+- Cascade deletion for nested tasks
 
 ## Security Notes
 

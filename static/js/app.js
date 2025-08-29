@@ -1,4 +1,4 @@
-// Custom JavaScript for the todo list app
+// Custom JavaScript for FlaskTasks app
 
 document.addEventListener('DOMContentLoaded', function() {
     // Add active class to current navigation item
@@ -194,5 +194,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize collapse states
     initializeCollapseStates();
 
-    console.log('Todo List App initialized successfully!');
+    console.log('FlaskTasks App initialized successfully!');
 });
